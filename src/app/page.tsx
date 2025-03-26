@@ -1,9 +1,8 @@
 'use client';
 import { useEffect } from 'react'
 import Landing from '../components/Landing'
-import Projects from '../components/Projects'
+import Projects from '../components/Projects/Projects'
 export default function Home() {
-
   useEffect( () => {
     (
       async () => {
@@ -12,6 +11,7 @@ export default function Home() {
       }
     )()
   }, [])
+
 
   return (
     <main>
