@@ -2,6 +2,7 @@
 import { useEffect } from 'react'
 import Landing from '../components/Landing'
 import Projects from '../components/Projects/Projects'
+import Description from '../components/Description'
 export default function Home() {
   useEffect( () => {
     (
@@ -19,7 +20,7 @@ export default function Home() {
         {isLoading && <Preloader />}
       </AnimatePresence> */}
       <Landing />
-      {/* <Description /> */}
+      <Description />
       <Projects />
       {/* <SlidingImages />
       <Contact /> */}
