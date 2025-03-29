@@ -4,6 +4,7 @@ import Landing from '../components/Landing'
 import Projects from '../components/Projects/Projects'
 import Description from '../components/Description'
 import SlidingImages from '../components/SlidingImages'
+import Contact from '../components/Contact'
 export default function Home() {
   useEffect( () => {
     (
@@ -24,7 +25,7 @@ export default function Home() {
       <Description />
       <Projects />
       <SlidingImages />
-      {/* <Contact /> */}
+      <Contact />
     </main>
   )
 }
