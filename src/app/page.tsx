@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Landing from '../components/Landing'
 import Projects from '../components/Projects/Projects'
 import Description from '../components/Description'
+import SlidingImages from '../components/SlidingImages'
 export default function Home() {
   useEffect( () => {
     (
@@ -22,8 +23,8 @@ export default function Home() {
       <Landing />
       <Description />
       <Projects />
-      {/* <SlidingImages />
-      <Contact /> */}
+      <SlidingImages />
+      {/* <Contact /> */}
     </main>
   )
 }
