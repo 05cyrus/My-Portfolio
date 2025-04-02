@@ -5,7 +5,7 @@
     right: 0;
     top: 0;
     color: white;
-
+    z-index: 3;
     .body{
         box-sizing: border-box;
         height: 100%;
@@ -36,12 +36,5 @@
             }
             
         }
-    }
-    .footer{
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        font-size: 12px;
-        gap: 40px;
     }
 }

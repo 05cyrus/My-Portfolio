@@ -3,7 +3,7 @@
 import React from 'react';
 import styles from './style.module.css';
 
-// rename the function so it does not collide with "index"
+
 export default function Project({ index, title, setModal }) {
   return (
     <div

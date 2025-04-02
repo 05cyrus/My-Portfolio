@@ -30,7 +30,6 @@ const projects = [
 
   export default function Projects() {
     const [modal, setModal] = useState({active: false, index: 0})
-    console.log("Project component is: ", Project);
     return (
     <main className={styles.main}>
       <div className={styles.body}>

@@ -1,5 +1,6 @@
 'use client';
 import { useEffect,useState } from 'react'
+import styles from './page.module.scss'
 import Landing from '../components/Landing'
 import Projects from '../components/Projects/Projects'
 import Description from '../components/Description'
@@ -28,7 +29,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main >
+    <main  className={styles.main}>
       <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
       </AnimatePresence>

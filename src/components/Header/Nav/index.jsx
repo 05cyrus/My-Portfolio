@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import styles from './style.module.scss';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import { menuSlide } from '../anim';
-import Link from '../Link';
-import Magnetic from '../../../common/Magnetic';
+import { menuSlide } from '../animation';
+import Link from './Link';
+import Curve from './Curve';
+import Footer from './Footer';
+
 const navItems = [
   {
     title: "Home",
@@ -53,21 +55,9 @@ export default function index() {
                       })
                     }
             </div>
-            <div className={styles.footer}>
-              <Magnetic>
-                <a>Awwwards</a>
-                </Magnetic>
-              <Magnetic>
-                <a>Instagram</a>
-                </Magnetic>
-              <Magnetic>
-                <a>Dribble</a>
-                </Magnetic>
-              <Magnetic>
-                <a>LinkedIn</a>
-                </Magnetic>      
-            </div>
+            <Footer />
         </div>
+        <Curve />
     </motion.div>
   )
 }
