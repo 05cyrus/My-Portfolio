@@ -6,6 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Nav from './Nav';
 import gsap from 'gsap';
+import Magnetic from '../../common/Magnetic';
 
 export default function index() {
     const header = useRef(null);
@@ -43,15 +44,21 @@ export default function index() {
             </div>
             <div className={styles.nav}>
                 <div className={styles.el}>
+                    <Magnetic>
                     <a>Work</a>
+                    </Magnetic>
                     <div className={styles.indicator}></div>
                 </div>
                 <div className={styles.el}>
+                <Magnetic>
                     <a>About</a>
+                </Magnetic>
                     <div className={styles.indicator}></div>
                 </div>
                 <div className={styles.el}>
+                <Magnetic>
                     <a>Contact</a>
+                    </Magnetic>
                     <div className={styles.indicator}></div>
                 </div>
             </div>

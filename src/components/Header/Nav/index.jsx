@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { menuSlide } from '../anim';
 import Link from '../Link';
-
+import Magnetic from '../../../common/Magnetic';
 const navItems = [
   {
     title: "Home",
@@ -54,10 +54,18 @@ export default function index() {
                     }
             </div>
             <div className={styles.footer}>
+              <Magnetic>
                 <a>Awwwards</a>
+                </Magnetic>
+              <Magnetic>
                 <a>Instagram</a>
+                </Magnetic>
+              <Magnetic>
                 <a>Dribble</a>
+                </Magnetic>
+              <Magnetic>
                 <a>LinkedIn</a>
+                </Magnetic>      
             </div>
         </div>
     </motion.div>
