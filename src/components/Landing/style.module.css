@@ -33,3 +33,19 @@
     left: 100%;
     top: 0;
   }
+  .description{
+    position: absolute;
+    top: 25%;
+    left: 74%;
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    p{
+      margin: 0px;
+      margin-bottom: 10px;
+    }
+    svg{
+      transform: scale(2);
+      margin-bottom: 100px;
+    }
+  }

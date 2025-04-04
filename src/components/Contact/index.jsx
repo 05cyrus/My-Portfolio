@@ -71,7 +71,7 @@ export default function index() {
                                 </Magnetic>
                         </span>
                         <Magnetic>
-                            <p>Dribbble</p>
+                            <p>Behance</p>
                             </Magnetic>
                         <Magnetic>
                             <p>Linkedin</p>

@@ -3,6 +3,8 @@ import styles from './style.module.css';
 import { useState } from 'react';
 import Project from './Pcomponents/Project/Project'; 
 import Modal from './Pcomponents/Modal/Modal';     
+import { motion } from 'framer-motion';
+import Rounded from '../../common/RoundedButton';
 
 const projects = [
     {
@@ -38,8 +40,12 @@ const projects = [
             return <Project index={index} title={project.title} setModal={setModal} key={index}/>
           })
         }
+              <Rounded>
+      <p>More work</p>
+    </Rounded>
       </div>
       <Modal modal={modal} projects={projects}/>
+
     </main>
     )
   }
