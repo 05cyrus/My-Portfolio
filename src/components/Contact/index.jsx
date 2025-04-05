@@ -1,6 +1,6 @@
 import styles from './style.module.scss';
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useRef,useState,useEffect } from 'react';
 import { useScroll, motion, useTransform, useSpring } from 'framer-motion';
 import Magnetic from '../../common/Magnetic';
 import Rounded from '../../common/RoundedButton';
@@ -14,6 +14,29 @@ export default function index() {
     const x = useTransform(scrollYProgress, [0, 1], [0, 100])
     const y = useTransform(scrollYProgress, [0, 1], [-500, 0])
     const rotate = useTransform(scrollYProgress, [0, 1], [120, 90])
+    const [time, setTime] = useState('');
+
+    useEffect(() => {
+      const updateTime = () => {
+        const now = new Date();
+  
+        // Convert to IST (Indian Standard Time)
+        const options = {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: true,
+          timeZone: 'Asia/Kolkata',
+        };
+  
+        const formattedTime = now.toLocaleTimeString('en-IN', options);
+        setTime((formattedTime + ' IST').toUpperCase());
+      };
+  
+      updateTime(); 
+      const interval = setInterval(updateTime, 1000); 
+  
+      return () => clearInterval(interval);
+    }, []);
     return (
         <motion.div style={{y}} ref={container} className={styles.contact}>
             <div className={styles.body}>
@@ -56,10 +79,10 @@ export default function index() {
                         </span>
                         <span>
  
-                            <h3>Version</h3>
+                            <h3>Local Time</h3>
   
                             <Magnetic>
-                            <p>03:10 AM IST</p>
+                            <p>{time}</p>
                             </Magnetic>
                         </span>
                     </div>
@@ -67,14 +90,41 @@ export default function index() {
                         <span>
                             <h3>socials</h3>
                             <Magnetic>
-                                <p>Instagram</p>
-                                </Magnetic>
-                        </span>
-                        <Magnetic>
-                            <p>Behance</p>
+                                <p>
+                                <a
+                                    href="https://www.instagram.com/sum.it__?igsh=MXViM3Q5cXdxOGFmMg%3D%3D&utm_source=qr"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ color: 'inherit', textDecoration: 'none' }}
+                                >
+                                    Instagram
+                                </a>
+                                </p>
                             </Magnetic>
-                        <Magnetic>
-                            <p>Linkedin</p>
+                        </span>
+                            <Magnetic>
+                                <p>
+                                <a
+                                    href="https://www.behance.net/deathbringer2"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ color: 'inherit', textDecoration: 'none' }}
+                                >
+                                    Behance
+                                </a>
+                                </p>
+                            </Magnetic>
+                            <Magnetic>
+                                <p>
+                                <a
+                                    href="https://www.linkedin.com/in/sumitgusain05/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ color: 'inherit', textDecoration: 'none' }}
+                                >
+                                    LinkedIn
+                                </a>
+                                </p>
                             </Magnetic>
                     </div>
                 </div>

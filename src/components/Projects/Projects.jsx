@@ -35,12 +35,13 @@ const projects = [
     return (
     <main className={styles.main}>
       <div className={styles.body}>
+        <motion.h1 className={styles.h1}>Recent work</motion.h1>
         {
           projects.map( (project, index) => {
             return <Project index={index} title={project.title} setModal={setModal} key={index}/>
           })
         }
-              <Rounded>
+      <Rounded>
       <p>More work</p>
     </Rounded>
       </div>

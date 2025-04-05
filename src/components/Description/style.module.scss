@@ -31,12 +31,16 @@
                 font-weight: 300;
             }
         }
+        .button:hover{
+            background-color: #455CE9;
+            transition: all 0.4s linear;
+        }
         .button{
-            top: 80%;
-            left: calc(100% - 200px); 
             width: 180px;
             height: 180px;
-            background-color: #1C1D20;
+            top: 80px;
+            left: calc(100% - 200px);
+            background-color: rgb(41, 41, 41);
             color: white;
             border-radius: 50%;
             position: absolute;
@@ -44,12 +48,13 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            padding: 0px;
             p{
                 margin: 0px;
                 font-size: 16px;
                 font-weight: 300;
+                z-index: 2;
                 position: relative;
-                z-index: 1;
             }
         }
     }
