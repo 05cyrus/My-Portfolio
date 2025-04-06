@@ -3,3 +3,6 @@ body{
   overflow: hidden; /* Hide scrollbars */
   cursor: wait;
 }
+html, body {
+  overflow-x: hidden;
+}

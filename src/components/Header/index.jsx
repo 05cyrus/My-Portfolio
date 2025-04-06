@@ -20,6 +20,7 @@ export default function index() {
     }, [pathname])
 
     useLayoutEffect( () => {
+        if (window.innerWidth <= 768) return;
         gsap.registerPlugin(ScrollTrigger)
         gsap.to(button.current, {
             scrollTrigger: {

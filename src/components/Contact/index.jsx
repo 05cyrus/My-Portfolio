@@ -46,6 +46,7 @@ export default function index() {
                             <Image 
                             fill={true}
                             alt={"image"}
+                            sizes="(max-width: 768px) 100vw, 33vw"
                             src={`/images/profile.jpg`}
                             />
                         </div>

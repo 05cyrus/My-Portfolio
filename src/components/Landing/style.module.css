@@ -5,13 +5,13 @@
     overflow: hidden;
   }
   
-  .main img{
+  .main :global(img){
     object-fit: cover;
   }
   
   .sliderContainer{
     position: absolute;
-    top: calc(100vh - 350px);
+    top: calc(100vh - 35%);
   }
   
   .slider{
@@ -49,3 +49,31 @@
       margin-bottom: 100px;
     }
   }
+  .textPressure{
+    position: 'relative';
+    height: '300px';
+  }
+  
+  @media (max-width: 768px) {
+    .main{
+      padding: 0px;
+      margin: 0px;
+    }
+    .slider p { 
+      font-size: 80px;
+    }
+    
+    .description {
+      top: 80%;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+  
+    .description svg {
+      margin-bottom: 20px;
+      transform: scale(1.5);
+    }
+  }
+  

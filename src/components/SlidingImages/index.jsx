@@ -60,10 +60,12 @@ export default function index() {
                         slider1.map( (project, index) => {
                             return <div key={index} className={styles.project} style={{backgroundColor: project.color}} >
                                 <div  className={styles.imageContainer}>
-                                    <Image 
-                                    fill={true}
-                                    alt={"image"}
-                                    src={`/images/${project.src}`}/>
+                                <Image 
+  fill
+  sizes="(max-width: 768px) 100vw, 50vw"
+  alt="image"
+  src={`/images/${project.src}`}
+/>
                                 </div>
                             </div>
                         })
@@ -74,10 +76,12 @@ export default function index() {
                         slider2.map( (project, index) => {
                             return <div key={index} className={styles.project} style={{backgroundColor: project.color}} >
                                 <div  className={styles.imageContainer}>
-                                    <Image 
-                                    fill={true}
-                                    alt={"image"}
-                                    src={`/images/${project.src}`}/>
+                                <Image 
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                    alt="image"
+                                    src={`/images/${project.src}`}
+                                />
                                 </div>
                             </div>
                         })
