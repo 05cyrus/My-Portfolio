@@ -12,6 +12,8 @@ export default function Magnetic({ children }) {
     const el = magnetic.current;
     if (!el) return;
 
+      // Skip magnetic effect on small screens
+     if (window.innerWidth < 768) return;
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
       const { height, width, left, top } = el.getBoundingClientRect();
