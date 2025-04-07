@@ -87,13 +87,13 @@ export default function index() {
                             </Magnetic>
                         </span>
                     </div>
-                    <div>
+                    <div className={styles.socials}>
                         <span>
-                            <h3>socials</h3>
+                            <h3>SOCIALS</h3>
                             <Magnetic>
                                 <p>
                                 <a
-                                    href="https://www.instagram.com/sum.it__?igsh=MXViM3Q5cXdxOGFmMg%3D%3D&utm_source=qr"
+                                    href="https://www.instagram.com/sum.it____?igsh=MXViM3Q5cXdxOGFmMg%3D%3D&utm_source=qr"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{ color: 'inherit', textDecoration: 'none' }}

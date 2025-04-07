@@ -61,11 +61,11 @@ export default function index() {
                             return <div key={index} className={styles.project} style={{backgroundColor: project.color}} >
                                 <div  className={styles.imageContainer}>
                                 <Image 
-  fill
-  sizes="(max-width: 768px) 100vw, 50vw"
-  alt="image"
-  src={`/images/${project.src}`}
-/>
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    alt="image"
+                                    src={`/images/${project.src}`}
+                                    />
                                 </div>
                             </div>
                         })
