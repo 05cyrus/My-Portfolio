@@ -10,7 +10,7 @@
         display: flex;
         gap: 50px;
         position: relative;
-        p{
+        :global(p){ 
             margin: 0px;
             &:nth-of-type(1){
                 font-size: 2rem;
@@ -52,7 +52,7 @@
             justify-content: center;
             cursor: pointer;
             padding: 0px;
-            p{
+            :global(p){
                 margin: 0px;
                 font-size: 16px;
                 font-weight: 300;

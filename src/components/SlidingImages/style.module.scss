@@ -32,9 +32,11 @@
         position: relative;
         margin-top: 350px;
         .circle{
+            display: none;
             height: 1550%;
             width: 120%;
             left: -10%;
+
             border-radius: 0 0 50% 50%;
             background-color: white;
             z-index: 1;
@@ -43,3 +45,25 @@
         }
     }
 }
+// @media (max-width: 768px) {
+//     .slidingImages {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 2rem;
+//         padding: 1rem;
+//         overflow-x: hidden;
+//       }
+      
+//       .slider {
+//         display: flex;
+//         overflow-x: auto;
+//         scroll-snap-type: x mandatory;
+//         -webkit-overflow-scrolling: touch;
+//         gap: 1rem;
+//         padding-bottom: 1rem;
+//       }
+//       .circleContainer {
+//         display: none; 
+//       }
+      
+// }
