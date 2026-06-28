@@ -1,0 +1,102 @@
+.description{
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-top: 200px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    .body{
+        max-width: 1400px;
+        display: flex;
+        gap: 50px;
+        position: relative;
+        :global(p){ 
+            margin: 0px;
+            &:nth-of-type(1){
+                font-size: 2rem;
+                gap: 8px;
+                line-height: 1.3;
+                span{
+                    margin-right: 3px;
+                }
+                .mask{
+                    position: relative;
+                    overflow: hidden;
+                    display: inline-flex;
+                }
+            }
+            &:nth-of-type(2){
+                font-size: 18px;
+                width: 80%;
+                font-weight: 300;
+            }
+        }
+        .button:hover{
+            background-color: #455CE9;
+            transition: all 0.4s linear;
+            @media (max-width: 768px) {
+                display: none;
+              }
+        }
+        .button{
+            width: 180px;
+            height: 180px;
+            top: 80px;
+            left: calc(100% - 200px);
+            background-color: rgb(41, 41, 41);
+            color: white;
+            border-radius: 50%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0px;
+            :global(p){
+                margin: 0px;
+                font-size: 16px;
+                font-weight: 300;
+                z-index: 2;
+                position: relative;
+            }
+            @media (max-width: 768px) {
+                display: none;
+              }
+        }
+    }
+    .moreWork{
+        padding: 20px;
+        border-radius: 40px;
+        border: 1px solid grey;
+    }
+}
+@media (max-width: 768px) {
+    .description {
+      margin-top: 0px;;  
+      padding: 2rem 2rem;
+      text-align: left;
+      margin-bottom: 0px;
+    }
+  
+    .body {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .body p {
+      line-height: 1.5;
+      word-break: break-word;
+    }
+  
+    .mask span {
+      display: inline-block;
+      white-space: normal;
+      font-size: 1.5 rem;
+    }
+  
+    .button {
+        display: none;
+    }
+  }
+  
