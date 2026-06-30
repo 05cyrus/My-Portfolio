@@ -13,7 +13,7 @@
     "gsap": "^3.12.7",
     "install": "^0.13.0",
     "locomotive-scroll": "^5.0.0-beta.21",
-    "next": "15.2.3",
+    "next": "15.2.8",
     "npm": "^10.9.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
