@@ -29,7 +29,10 @@ export default function index() {
         };
   
         const formattedTime = now.toLocaleTimeString('en-IN', options);
-        setTime((formattedTime + ' IST').toUpperCase());
+        const next = (formattedTime + ' IST').toUpperCase();
+        // Only trigger a re-render when the displayed minute actually changes,
+        // instead of re-rendering the whole subtree every second.
+        setTime((prev) => (prev === next ? prev : next));
       };
   
       updateTime(); 
@@ -46,7 +49,7 @@ export default function index() {
                             <Image 
                             fill={true}
                             alt={"image"}
-                            sizes="(max-width: 768px) 100vw, 33vw"
+                            sizes="100px"
                             src={`/images/profile.jpg`}
                             />
                         </div>

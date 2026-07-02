@@ -2,9 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 const TextPressure = ({
   text = 'Compressa',
-  fontFamily = 'Compressa VF',
-  // This font is just an example, you should not use it in commercial projects.
-  fontUrl = 'https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2',
+  // Font is loaded/self-hosted by the parent via next/font and passed in here.
+  fontFamily = 'sans-serif',
 
   width = true,
   weight = true,
@@ -29,6 +28,14 @@ const TextPressure = ({
   const mouseRef = useRef({ x: 0, y: 0 });
   const cursorRef = useRef({ x: 0, y: 0 });
 
+  // rAF loop control: only run while there is something to animate (mouse
+  // catching up) and while the heading is on screen — otherwise it thrashes
+  // layout on the main thread every frame for no visible change.
+  const rafRef = useRef(null);
+  const runningRef = useRef(false);
+  const visibleRef = useRef(true);
+  const startRef = useRef(() => {});
+
   const [fontSize, setFontSize] = useState(minFontSize);
   const [scaleY, setScaleY] = useState(1);
   const [lineHeight, setLineHeight] = useState(1);
@@ -45,11 +52,13 @@ const TextPressure = ({
     const handleMouseMove = (e) => {
       cursorRef.current.x = e.clientX;
       cursorRef.current.y = e.clientY;
+      startRef.current(); // wake the animation loop on input
     };
     const handleTouchMove = (e) => {
       const t = e.touches[0];
       cursorRef.current.x = t.clientX;
       cursorRef.current.y = t.clientY;
+      startRef.current();
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -64,9 +73,24 @@ const TextPressure = ({
       cursorRef.current.y = mouseRef.current.y;
     }
 
+    // Pause the loop entirely while the heading is scrolled off screen.
+    let observer;
+    if (containerRef.current && typeof IntersectionObserver !== 'undefined') {
+      observer = new IntersectionObserver(([entry]) => {
+        visibleRef.current = entry.isIntersecting;
+        if (entry.isIntersecting) startRef.current();
+        else if (rafRef.current) {
+          cancelAnimationFrame(rafRef.current);
+          runningRef.current = false;
+        }
+      });
+      observer.observe(containerRef.current);
+    }
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchmove', handleTouchMove);
+      observer?.disconnect();
     };
   }, []);
 
@@ -102,30 +126,31 @@ const TextPressure = ({
   }, [scale, text]);
 
   useEffect(() => {
-    let rafId;
     const animate = () => {
       mouseRef.current.x += (cursorRef.current.x - mouseRef.current.x) / 15;
       mouseRef.current.y += (cursorRef.current.y - mouseRef.current.y) / 15;
 
       if (titleRef.current) {
+        // Batch ALL layout reads first, then ALL writes — this collapses the
+        // former read-after-write reflow per character into a single layout.
         const titleRect = titleRef.current.getBoundingClientRect();
         const maxDist = titleRect.width / 2;
 
-        spansRef.current.forEach((span) => {
-          if (!span) return;
+        const spans = spansRef.current;
+        const rects = spans.map((span) => (span ? span.getBoundingClientRect() : null));
 
-          const rect = span.getBoundingClientRect();
-          const charCenter = {
-            x: rect.x + rect.width / 2,
-            y: rect.y + rect.height / 2,
-          };
+        const getAttr = (distance, minVal, maxVal) => {
+          const val = maxVal - Math.abs((maxVal * distance) / maxDist);
+          return Math.max(minVal, val + minVal);
+        };
 
+        for (let i = 0; i < spans.length; i++) {
+          const span = spans[i];
+          const rect = rects[i];
+          if (!span || !rect) continue;
+
+          const charCenter = { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 };
           const d = dist(mouseRef.current, charCenter);
-
-          const getAttr = (distance, minVal, maxVal) => {
-            const val = maxVal - Math.abs((maxVal * distance) / maxDist);
-            return Math.max(minVal, val + minVal);
-          };
 
           const wdth = width ? Math.floor(getAttr(d, 5, 200)) : 100;
           const wght = weight ? Math.floor(getAttr(d, 100, 900)) : 400;
@@ -134,14 +159,33 @@ const TextPressure = ({
 
           span.style.opacity = alphaVal;
           span.style.fontVariationSettings = `'wght' ${wght}, 'wdth' ${wdth}, 'ital' ${italVal}`;
-        });
+        }
       }
 
-      rafId = requestAnimationFrame(animate);
+      // Idle-stop: once the eased cursor has caught up there is nothing left to
+      // animate. Input handlers / the visibility observer restart the loop.
+      const dx = cursorRef.current.x - mouseRef.current.x;
+      const dy = cursorRef.current.y - mouseRef.current.y;
+      if (Math.abs(dx) < 0.05 && Math.abs(dy) < 0.05) {
+        runningRef.current = false;
+        return;
+      }
+      rafRef.current = requestAnimationFrame(animate);
     };
 
-    animate();
-    return () => cancelAnimationFrame(rafId);
+    const start = () => {
+      if (runningRef.current || !visibleRef.current) return;
+      runningRef.current = true;
+      rafRef.current = requestAnimationFrame(animate);
+    };
+    startRef.current = start;
+
+    start(); // run at least one pass to set the resting state
+
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      runningRef.current = false;
+    };
   }, [width, weight, italic, alpha, chars.length]);
 
   const dynamicClassName = [className, flex ? 'flex' : '', stroke ? 'stroke' : '']
@@ -159,13 +203,6 @@ const TextPressure = ({
       }}
     >
       <style>{`
-        /* Font face if needed */
-        @font-face {
-          font-family: '${fontFamily}';
-          src: url('${fontUrl}');
-          font-style: normal;
-        }
-
         /* If flex=true => space out each character span */
         .flex {
           display: flex;

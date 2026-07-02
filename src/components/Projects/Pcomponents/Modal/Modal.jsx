@@ -42,15 +42,16 @@ export default function index({modal, projects}) {
   return (
     <>
         <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={styles.modalContainer}>
-            <div style={{top: index * -100 + "%"}} className={styles.modalSlider}>
+            <div style={{transform: `translateY(${index * -100}%)`}} className={styles.modalSlider}>
             {
                 projects.map( (project, index) => {
                 const { src, color } = project
                 return <div className={styles.modal} style={{backgroundColor: color}} key={`modal_${index}`}>
-                    <Image 
+                    <Image
                     src={`/images/${src}`}
                     width={300}
-                    height={0}
+                    height={169}
+                    sizes="300px"
                     alt="image"
                     />
                 </div>

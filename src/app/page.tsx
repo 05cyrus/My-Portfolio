@@ -15,16 +15,25 @@ export default function Home() {
   const scrollRef = useRef<LocomotiveScrollType | null>(null); // ✅ type-safe ref
 
   useEffect(() => {
+    // Unlock interactivity on a fixed timer that starts immediately — do NOT
+    // stack it behind the locomotive-scroll dynamic import, which used to delay
+    // the whole intro by the chunk's download/parse time.
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      document.body.style.cursor = 'default';
+      window.scrollTo(0, 0);
+    }, 2000);
+
+    // Initialize smooth scroll in parallel; don't block the unlock on it.
     (async () => {
       const LocomotiveScroll = (await import('locomotive-scroll')).default;
       scrollRef.current = new LocomotiveScroll();
-
-      setTimeout(() => {
-        setIsLoading(false);
-        document.body.style.cursor = 'default';
-        window.scrollTo(0, 0);
-      }, 2000);
     })();
+
+    return () => {
+      clearTimeout(timer);
+      scrollRef.current?.destroy?.();
+    };
   }, []);
 
   return (

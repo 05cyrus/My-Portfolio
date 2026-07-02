@@ -9,22 +9,22 @@ import Rounded from '../../common/RoundedButton';
 const projects = [
     {
       title: "Zensya Tech",
-      src: "zensya-tech.png",
+      src: "zensya-tech.webp",
       color: "#000000"
     },
     {
       title: "Zensya Main",
-      src: "zensya-main.png",
+      src: "zensya-main.webp",
       color: "#8C8C8C"
     },
     {
       title: "Parkinsons",
-      src: "parkinsons.png",
+      src: "parkinsons.webp",
       color: "#EFE8D3"
     },
     {
       title: "FastAid",
-      src: "fastaid.png",
+      src: "fastaid.webp",
       color: "#706D63"
     }
   ]

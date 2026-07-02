@@ -6,38 +6,38 @@ import Image from 'next/image';
 const slider1 = [
     {
         color: "#e3e5e7",
-        src: "zensya-tech.png"
+        src: "zensya-tech.webp"
     },
     {
         color: "#d6d7dc",
-        src: "zensya-main.png"
+        src: "zensya-main.webp"
     },
     {
         color: "#e3e3e3",
-        src: "parkinsons.png"
+        src: "parkinsons.webp"
     },
     {
         color: "#21242b",
-        src: "fastaid.png"
+        src: "fastaid.webp"
     }
 ]
 
 const slider2 = [
     {
         color: "#d4e3ec",
-        src: "Mondiran.png"
+        src: "Mondiran.webp"
     },
     {
         color: "#e5e0e1",
-        src: "godfather.png"
+        src: "godfather.webp"
     },
     {
         color: "#d7d4cf",
-        src: "Touch.png"
+        src: "Touch.webp"
     },
     {
         color: "#e1dad6",
-        src: "car.png"
+        src: "car.webp"
     }
 ]
 
@@ -60,9 +60,9 @@ export default function index() {
                         slider1.map( (project, index) => {
                             return <div key={index} className={styles.project} style={{backgroundColor: project.color}} >
                                 <div  className={styles.imageContainer}>
-                                <Image 
+                                <Image
                                     fill
-                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    sizes="(max-width: 768px) 30vw, 24vw"
                                     alt="image"
                                     src={`/images/${project.src}`}
                                     />
@@ -76,9 +76,9 @@ export default function index() {
                         slider2.map( (project, index) => {
                             return <div key={index} className={styles.project} style={{backgroundColor: project.color}} >
                                 <div  className={styles.imageContainer}>
-                                <Image 
+                                <Image
                                     fill
-                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                    sizes="(max-width: 768px) 30vw, 24vw"
                                     alt="image"
                                     src={`/images/${project.src}`}
                                 />

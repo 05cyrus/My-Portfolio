@@ -3,8 +3,17 @@ import Image from 'next/image';
 import styles from './style.module.css';
 import { useRef, useEffect ,useState} from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Roboto_Flex } from 'next/font/google';
 import TextPressure from './animation';
+
+// Self-hosted, OFL-licensed variable font (weight 100-1000 + width 25-151)
+// that drives the hero "pressure" effect — no third-party/runtime request.
+const pressureFont = Roboto_Flex({
+  subsets: ['latin'],
+  axes: ['wdth'],
+  display: 'swap',
+});
 
 
 export default function Landing() {
@@ -12,6 +21,7 @@ export default function Landing() {
     const firstText = useRef(null);
     const secondText = useRef(null);
     const slider = useRef(null);
+    const rafRef = useRef(null);
     let xPercent = 0;
     let direction = -1;
 
@@ -27,29 +37,58 @@ export default function Landing() {
           },
           x: "-500px",
         })
-        requestAnimationFrame(animate);
+
+        const animate = () => {
+            if(xPercent < -100){
+                xPercent = 0;
+            }
+            else if(xPercent > 0){
+                xPercent = -100;
+            }
+            gsap.set(firstText.current, {xPercent: xPercent})
+            gsap.set(secondText.current, {xPercent: xPercent})
+            xPercent += 0.1 * direction;
+            rafRef.current = requestAnimationFrame(animate);
+        }
+
+        // Only run the marquee loop while the hero is on screen, and always
+        // cancel it on unmount (the old code leaked the rAF and double-ran it
+        // under StrictMode).
+        let running = false;
+        const play = () => {
+            if (running) return;
+            running = true;
+            rafRef.current = requestAnimationFrame(animate);
+        };
+        const stop = () => {
+            running = false;
+            if (rafRef.current) cancelAnimationFrame(rafRef.current);
+        };
+
+        let observer;
+        if (slider.current && typeof IntersectionObserver !== 'undefined') {
+            observer = new IntersectionObserver(([entry]) => {
+                entry.isIntersecting ? play() : stop();
+            });
+            observer.observe(slider.current);
+        } else {
+            play();
+        }
+
+        return () => {
+            stop();
+            observer?.disconnect();
+        };
     }, [])
 
-    const animate = () => {
-        if(xPercent < -100){
-            xPercent = 0;
-        } 
-        else if(xPercent > 0){
-            xPercent = -100;
-        }
-        gsap.set(firstText.current, {xPercent: xPercent})
-        gsap.set(secondText.current, {xPercent: xPercent})
-        requestAnimationFrame(animate);
-        xPercent += 0.1 * direction;
-    }
-    const [bgImage, setBgImage] = useState("/images/bg1.png");
+    const [bgImage, setBgImage] = useState("/images/bg1.webp");
 
     useEffect(() => {
       const handleResize = () => {
         if (window.matchMedia('(max-width: 768px)').matches) {
-          setBgImage("/images/bgsmall.png");
+          setBgImage("/images/bgsmall.webp");
         } else {
-          setBgImage("/images/bg1.png");
+          setBgImage("/images/bg1.webp");
         }
       };
     
@@ -61,11 +100,13 @@ export default function Landing() {
     
   return (
     <main className={styles.main}>
-      <Image 
+      <Image
         src={bgImage}
         fill={true}
         sizes="100vw"
         alt="background"
+        priority
+        fetchPriority="high"
       />
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
@@ -81,12 +122,13 @@ export default function Landing() {
         <div style={styles.TextPressure}>
   <TextPressure
     text="Freelance Designer & Developer"
+    fontFamily={pressureFont.style.fontFamily}
     flex={true}
     alpha={false}
     stroke={false}
     width={true}
     weight={true}
-    italic={true}
+    italic={false}
     textColor="#ffffff"
     strokeColor="#ff0000"
     minFontSize={36}
