@@ -33,7 +33,7 @@ const projects = [
   export default function Projects() {
     const [modal, setModal] = useState({active: false, index: 0})
     return (
-    <main className={styles.main}>
+    <main id="work" className={styles.main}>
       <div className={styles.body}>
         <motion.h1 className={styles.h1}>Recent work</motion.h1>
         {

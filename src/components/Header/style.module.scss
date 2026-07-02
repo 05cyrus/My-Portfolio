@@ -178,6 +178,28 @@
     top: 1rem;
     right: 1rem;
     z-index: 999;
+    /* Reveal the burger on mobile — the GSAP scroll effect that normally scales
+       it in is skipped below 768px, so pin it visible here. */
+    transform: scale(1);
+
+    .button {
+      width: 54px;
+      height: 54px;
+      margin: 0;
+    }
+
+    /* Base rules already draw two thin white bars; kill the stray black middle
+       bar the older flat mobile rule left behind and make the bars crisp. */
+    .burger {
+      background: transparent;
+
+      &::before,
+      &::after {
+        width: 40%;
+        height: 2px;
+        background-color: white;
+      }
+    }
   }
 
   .burger {

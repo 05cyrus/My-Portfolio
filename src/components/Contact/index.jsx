@@ -41,7 +41,7 @@ export default function index() {
       return () => clearInterval(interval);
     }, []);
     return (
-        <motion.div style={{y}} ref={container} className={styles.contact}>
+        <motion.div id="contact" style={{y}} ref={container} className={styles.contact}>
             <div className={styles.body}>
                 <div className={styles.title}>
                     <span>

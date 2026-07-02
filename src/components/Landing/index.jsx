@@ -99,7 +99,7 @@ export default function Landing() {
     }, []);
     
   return (
-    <main className={styles.main}>
+    <main id="home" className={styles.main}>
       <Image
         src={bgImage}
         fill={true}

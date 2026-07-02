@@ -157,6 +157,9 @@
 
   .body {
     width: 100%;
+    /* desktop .contact .body sets padding-top:200px (higher specificity), which
+       leaves a huge empty band above the headline on a phone. */
+    padding-top: 4rem !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -168,6 +171,18 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    /* desktop .contact .body .title has 200px side margins that this rule can't
+       beat without !important — 400px of margin overflows a 390px screen. */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-bottom: 2rem !important;
+    width: 100%;
+
+    /* decorative arrow is absolutely positioned at left:100% — hide the
+       right-edge overhang on mobile. */
+    svg {
+      display: none;
+    }
 
     span {
       display: flex;
@@ -192,16 +207,28 @@
   }
 
   .buttonContainer {
+    /* desktop absolutely-positions this at left:calc(100% - 400px) = -10px on a
+       390px screen, tearing the "Get in touch" circle off-screen. Reset it to a
+       normal-flow full-width pill. */
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    /* framer-motion sets an inline transform: translateX(0->100px) on scroll,
+       which shoved the centered button off the right edge on mobile. Pin it. */
+    transform: none !important;
+    margin-top: 1.5rem;
     display: flex;
     justify-content: center;
     width: 100%;
 
     .button {
-      border-radius: 9999px;
-      padding: 1rem 2rem;
+      position: relative !important;
+      border-radius: 9999px !important;
+      padding: 1rem 2rem !important;
       font-size: 1rem;
-      width: 100%;
-      max-width: 280px;
+      width: 100% !important;
+      max-width: 280px !important;
+      height: auto !important;
       text-align: center;
     }
   }
@@ -212,6 +239,10 @@
     align-items: center;
     width: 100%;
     gap: 1rem;
+    /* desktop .contact .body .nav has 200px side margins + 100px top; reset. */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 2rem !important;
 
     .button {
       border: 1px solid white;
@@ -256,18 +287,28 @@
       }
     }
 
-    .socials span {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    // Style the .socials CONTAINER (not just its inner span) so the SOCIALS
+    // label, Instagram, Behance and LinkedIn all lay out as one evenly-spaced,
+    // centered row. The base `.info div` rule packed them left with mismatched
+    // 10px gaps and only the SOCIALS+Instagram sub-group was being restyled.
+    .socials {
       flex-wrap: wrap;
-      gap: 2rem ;
+      justify-content: center;
+      align-items: center !important; // base sets flex-end
+      gap: 1.25rem !important;        // base sets 10px; uniform rhythm for every item
       padding: 0 0.5rem;
+
       span {
-        display: none; // hide duplicate socials label
+        // desktop .info div span forces column; force a row so the SOCIALS
+        // label sits inline on the same 1.25rem rhythm as the links.
+        flex-direction: row !important;
+        align-items: center;
+        gap: 1.25rem !important;
       }
 
       a {
+        display: inline-block;
+        padding: 0.5rem 0; // enlarge the actual tap target (the link, not the <p>)
         font-size: 0.9rem;
         color: white;
         text-decoration: none;

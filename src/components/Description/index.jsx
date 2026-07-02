@@ -12,7 +12,7 @@ export default function Index() {
   const isInView = useInView(description);
 
   return (
-    <div ref={description} className={styles.description}>
+    <div id="about" ref={description} className={styles.description}>
       <div className={styles.body}>
         <p className={styles.animatedText}>
           {phrase.split(' ').map((word, index) => (

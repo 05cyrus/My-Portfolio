@@ -20,17 +20,41 @@ export default function index() {
     }, [pathname])
 
     useEffect( () => {
-        if (window.innerWidth <= 768) return;
         gsap.registerPlugin(ScrollTrigger)
-        gsap.to(button.current, {
-            scrollTrigger: {
-                trigger: document.documentElement,
-                start: 0,
-                end: window.innerHeight,
-                onLeave: () => {gsap.to(button.current, {scale: 1, duration: 0.25, ease: "power1.out"})},
-                onEnterBack: () => {gsap.to(button.current, {scale: 0, duration: 0.25, ease: "power1.out"},setIsActive(false))}
+        const mm = gsap.matchMedia()
+
+        // Desktop: burger hidden on the hero, slides in once you scroll past the
+        // first screen. Wrapping this in matchMedia re-runs the setup whenever
+        // the viewport crosses 768px, so it no longer stays broken when the page
+        // first loads in a narrow / emulated viewport (the old innerWidth guard
+        // only ran once on mount and never recovered).
+        mm.add("(min-width: 769px)", () => {
+            gsap.set(button.current, { scale: 0 })
+            const tween = gsap.to(button.current, {
+                scrollTrigger: {
+                    trigger: document.documentElement,
+                    start: 0,
+                    end: window.innerHeight,
+                    onLeave: () => gsap.to(button.current, { scale: 1, duration: 0.25, ease: "power1.out" }),
+                    onEnterBack: () => {
+                        gsap.to(button.current, { scale: 0, duration: 0.25, ease: "power1.out" })
+                        setIsActive(false)
+                    }
+                }
+            })
+            return () => {
+                tween.scrollTrigger?.kill()
+                tween.kill()
             }
         })
+
+        // Mobile: always visible (CSS pins it too; this keeps GSAP's inline
+        // transform in sync so it doesn't fight the stylesheet).
+        mm.add("(max-width: 768px)", () => {
+            gsap.set(button.current, { scale: 1 })
+        })
+
+        return () => mm.revert()
     }, [])
 
     return (
@@ -71,7 +95,7 @@ export default function index() {
             </Rounded>
         </div>
         <AnimatePresence mode="wait">
-            {isActive && <Nav />}
+            {isActive && <Nav closeMenu={() => setIsActive(false)} />}
         </AnimatePresence>
         </>
     )

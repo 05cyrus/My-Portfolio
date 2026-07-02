@@ -5,3 +5,16 @@
     font-size: 12px;
     gap: 40px;
 }
+
+// 12px inline links give ~14px tap targets; pad them to a ~44px hit area.
+@media (max-width: 768px) {
+    .footer {
+        font-size: 14px;
+        gap: 20px;
+
+        a {
+            display: inline-block;
+            padding: 12px 0;
+        }
+    }
+}

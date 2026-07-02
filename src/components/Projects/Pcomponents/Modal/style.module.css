@@ -50,3 +50,15 @@
 .cursorLabel{
     background-color: transparent;
 }
+
+/* The preview modal is a desktop-only cursor-follow widget (positioned by a
+   mousemove listener). On touch it never gets positioned and a synthetic
+   mouseenter can scale the 400px box into view off-screen, causing horizontal
+   overflow. Hide it entirely on mobile. */
+@media (max-width: 768px) {
+    .modalContainer,
+    .cursor,
+    .cursorLabel {
+        display: none;
+    }
+}

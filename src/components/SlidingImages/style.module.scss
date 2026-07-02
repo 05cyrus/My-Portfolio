@@ -45,25 +45,26 @@
         }
     }
 }
-// @media (max-width: 768px) {
-//     .slidingImages {
-//         display: flex;
-//         flex-direction: column;
-//         gap: 2rem;
-//         padding: 1rem;
-//         overflow-x: hidden;
-//       }
-      
-//       .slider {
-//         display: flex;
-//         overflow-x: auto;
-//         scroll-snap-type: x mandatory;
-//         -webkit-overflow-scrolling: touch;
-//         gap: 1rem;
-//         padding-bottom: 1rem;
-//       }
-//       .circleContainer {
-//         display: none; 
-//       }
-      
-// }
+@media (max-width: 768px) {
+    .slidingImages {
+        // The sliders are 120vw wide at left:-10vw and get pushed further by
+        // the scroll-driven x transforms, so clip the horizontal overflow to
+        // stop the page scrolling sideways. overflow-x:clip (not hidden) avoids
+        // creating a vertical scroll container.
+        overflow-x: clip;
+
+        .slider {
+            .project {
+                // 20vw is only ~78px tall on a phone — bump it so thumbnails
+                // are legible.
+                height: 35vw;
+            }
+        }
+
+        .circleContainer {
+            // .circle is display:none, so the 350px margin is pure dead space
+            // — nearly a full screen of blank white on mobile.
+            margin-top: 100px;
+        }
+    }
+}

@@ -9,6 +9,7 @@ import Contact from '../components/Contact';
 import Preloader from '../components/Preloader';
 import { AnimatePresence } from 'framer-motion';
 import type LocomotiveScrollType from 'locomotive-scroll'; // ✅ import the type
+import { registerScroll } from '../common/smoothScroll';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,11 +29,13 @@ export default function Home() {
     (async () => {
       const LocomotiveScroll = (await import('locomotive-scroll')).default;
       scrollRef.current = new LocomotiveScroll();
+      registerScroll(scrollRef.current); // expose for the nav menu's smooth-scroll
     })();
 
     return () => {
       clearTimeout(timer);
       scrollRef.current?.destroy?.();
+      registerScroll(null);
     };
   }, []);
 

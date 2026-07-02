@@ -34,7 +34,25 @@
                 color: white;
                 font-weight: 300;
             }
-            
+
+        }
+    }
+}
+
+// The overlay panel has no width (only right:0) and 100px padding + 56px links,
+// so it overflows a phone. Pin it full-width and shrink the type.
+@media (max-width: 768px) {
+    .menu {
+        width: 100%;
+
+        .body {
+            padding: 80px 30px;
+
+            .nav {
+                font-size: 40px;
+                margin-top: 60px;
+                gap: 10px;
+            }
         }
     }
 }

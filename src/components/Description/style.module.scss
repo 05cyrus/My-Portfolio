@@ -10,6 +10,10 @@
         display: flex;
         gap: 50px;
         position: relative;
+        /* The "About me" circle is absolutely positioned and overflows down into
+           the Projects section; lift this layer so the circle paints above the
+           first project's top border instead of the border cutting across it. */
+        z-index: 2;
         :global(p){ 
             margin: 0px;
             &:nth-of-type(1){
@@ -72,7 +76,7 @@
 }
 @media (max-width: 768px) {
     .description {
-      margin-top: 0px;;  
+      margin-top: 0px;
       padding: 2rem 2rem;
       text-align: left;
       margin-bottom: 0px;
@@ -92,11 +96,17 @@
     .mask span {
       display: inline-block;
       white-space: normal;
-      font-size: 1.5 rem;
+      font-size: 1.5rem; /* was "1.5 rem" — the space made it an invalid length, so desktop 2rem leaked through */
     }
-  
+
+    .body p:nth-of-type(2) {
+      width: 100%; /* override desktop width:80% so the subtext fills the phone column */
+    }
+
+    /* Keep the "About me" CTA (and its blue hover-circle) hidden on mobile —
+       it doesn't lay out cleanly here. */
     .button {
-        display: none;
+      display: none;
     }
   }
   
