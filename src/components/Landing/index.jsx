@@ -110,8 +110,8 @@ export default function Landing() {
       />
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
-          <p ref={firstText}>Freelance Developer -</p>
-          <p ref={secondText}>Freelance Developer -</p>
+          <p ref={firstText}>Software Engineer -</p>
+          <p ref={secondText}>Software Engineer -</p>
         </div>
       </div>
       
@@ -121,7 +121,7 @@ export default function Landing() {
         </svg>
         <div style={styles.TextPressure}>
   <TextPressure
-    text="Freelance Designer & Developer"
+    text="Commerce Developer"
     fontFamily={pressureFont.style.fontFamily}
     flex={true}
     alpha={false}
