@@ -4,6 +4,7 @@ import styles from './page.module.scss';
 import Landing from '../components/Landing';
 import Projects from '../components/Projects/Projects';
 import Description from '../components/Description';
+import Experience from '../components/Experience';
 import SlidingImages from '../components/SlidingImages';
 import Contact from '../components/Contact';
 import Preloader from '../components/Preloader';
@@ -46,6 +47,7 @@ export default function Home() {
       </AnimatePresence>
       <Landing />
       <Description />
+      <Experience />
       <Projects />
       <SlidingImages />
       <Contact />

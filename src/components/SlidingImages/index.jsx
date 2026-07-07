@@ -6,38 +6,38 @@ import Image from 'next/image';
 const slider1 = [
     {
         color: "#e3e5e7",
-        src: "zensya-tech.webp"
+        src: "mufti.webp"
     },
     {
         color: "#d6d7dc",
-        src: "zensya-main.webp"
+        src: "primedeq.webp"
     },
     {
         color: "#e3e3e3",
-        src: "parkinsons.webp"
+        src: "orderapi.webp"
     },
     {
         color: "#21242b",
-        src: "fastaid.webp"
+        src: "charak.webp"
     }
 ]
 
 const slider2 = [
     {
         color: "#d4e3ec",
-        src: "Mondiran.webp"
+        src: "butterfly.webp"
     },
     {
         color: "#e5e0e1",
-        src: "godfather.webp"
+        src: "joyalukkas.webp"
     },
     {
         color: "#d7d4cf",
-        src: "Touch.webp"
+        src: "ttkprestige.webp"
     },
     {
         color: "#e1dad6",
-        src: "car.webp"
+        src: "parkinsons.webp"
     }
 ]
 

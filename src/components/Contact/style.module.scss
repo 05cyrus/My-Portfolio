@@ -20,7 +20,17 @@
             z-index: 1;
             transition: color 0.4s linear;
         }
-    
+        // Makes the whole pill clickable instead of just the text: the anchor
+        // stays sized to its text (so the button's shrink-to-fit width/height
+        // is unaffected), while this ::after stretches to cover the entire
+        // .button box (its nearest `position: relative` ancestor).
+        .stretchedLink::after{
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
     }
     .body{
         padding-top: 200px;

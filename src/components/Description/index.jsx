@@ -6,7 +6,7 @@ import Rounded from '../../common/RoundedButton';
 
 export default function Index() {
   const phrase =
-    'Helping brands to stand out in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.';
+    'From platform migrations to custom modules and security recovery, I build e-commerce that holds up. Commerce Developer at 18th Digitech, shipping Magento 2 and WordPress storefronts for Mufti, TTK Prestige, Joyalukkas and Asics.';
 
   const description = useRef(null);
   const isInView = useInView(description);
@@ -32,10 +32,11 @@ export default function Index() {
           animate={isInView ? 'open' : 'closed'}
           className={styles.subtext}
         >
-          The combination of my passion for design, code & interaction positions me in a unique
-          place in the web design world.
+          From custom module engineering and REST integrations to full platform migrations,
+          security forensics and analytics — I work across the whole commerce stack: Adobe
+          Commerce (Magento 2), PHP, JavaScript, React and MySQL.
         </motion.p>
-        <div data-scroll data-scroll-speed={0.01}>
+        <div data-scroll data-scroll-speed={0.01} className={styles.buttonContainer}>
           <Rounded className={styles.button}>
             <p>About me</p>
           </Rounded>

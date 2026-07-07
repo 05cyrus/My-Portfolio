@@ -67,10 +67,24 @@ export default function index() {
                 </div>
                 <div className={styles.nav}>
                         <Rounded className={styles.button}>
-                            <p>sumitgusain5311@gmail.com</p>
+                            <a
+                                href="mailto:sumitgusain5311@gmail.com"
+                                className={styles.stretchedLink}
+                                style={{ color: 'inherit', textDecoration: 'none' }}
+                            >
+                                <p>Write me a mail</p>
+                            </a>
                         </Rounded>
                         <Rounded className={styles.button}>
-                            <p>+91 7982416604</p>
+                            <a
+                                href="https://wa.me/917982416604"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.stretchedLink}
+                                style={{ color: 'inherit', textDecoration: 'none' }}
+                            >
+                                <p>Chat on WhatsApp</p>
+                            </a>
                         </Rounded>
                 </div>
                 <div className={styles.info}>
@@ -78,7 +92,7 @@ export default function index() {
                         <span>
                             <h3>Version</h3>
                             <Magnetic>
-                            <p>2025 © Edition</p>
+                            <p>2026 © Edition</p>
                             </Magnetic>
                         </span>
                         <span>
@@ -109,12 +123,12 @@ export default function index() {
                             <Magnetic>
                                 <p>
                                 <a
-                                    href="https://www.behance.net/deathbringer2"
+                                    href="https://github.com/05cyrus"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{ color: 'inherit', textDecoration: 'none' }}
                                 >
-                                    Behance
+                                    GitHub
                                 </a>
                                 </p>
                             </Magnetic>

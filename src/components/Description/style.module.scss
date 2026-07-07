@@ -42,15 +42,29 @@
                 display: none;
               }
         }
+        /* The absolute positioning lives on this outer container, NOT on the
+           button itself: the Magnetic/GSAP hover effect transforms the button's
+           wrapper, and a transformed ancestor becomes the containing block for
+           absolute children — which made the circle jump around on hover. */
+        .buttonContainer{
+            position: absolute;
+            top: calc(100% + 20px);
+            left: calc(100% - 280px);
+            @media (max-width: 768px) {
+                display: none;
+              }
+        }
         .button{
             width: 180px;
             height: 180px;
-            top: 80px;
-            left: calc(100% - 200px);
+            /* position:relative is load-bearing: RoundedButton's className
+               spread drops its own .roundedButton class (and its
+               position:relative), so without this the absolute hover-fill
+               circle escapes the button and its overflow:hidden clipping. */
+            position: relative;
             background-color: rgb(41, 41, 41);
             color: white;
             border-radius: 50%;
-            position: absolute;
             display: flex;
             align-items: center;
             justify-content: center;
