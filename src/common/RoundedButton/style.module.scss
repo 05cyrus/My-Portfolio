@@ -19,9 +19,29 @@
         transition: color 0.4s linear;
     }
 
-    &:hover{
-        p{
-            color: white;
+    // Real mouse/trackpad pointers get the GSAP-driven circle fill (see the
+    // matching (hover:hover)+(pointer:fine) check in RoundedButton/index.jsx)
+    // — keep this in sync with it, otherwise the text can turn white with no
+    // circle behind it.
+    @media (hover: hover) and (pointer: fine) {
+        &:hover{
+            p{
+                color: white;
+            }
+        }
+    }
+
+    // Touch/non-hover pointers never get a real ":hover" — fill instantly on
+    // tap instead, since the JS circle animation is skipped for them.
+    @media (hover: none) {
+        &:active{
+            .circle{
+                top: -25%;
+                width: 150%;
+            }
+            p{
+                color: white;
+            }
         }
     }
 }
@@ -32,4 +52,5 @@
     position: absolute;
     border-radius: 50%;
     top: 100%;
+    transition: top 0.3s ease, width 0.3s ease;
 }

@@ -163,6 +163,11 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    /* framer-motion sets an inline transform: translateY(-500px->0) as this
+       section scrolls into view (a "curtain reveal" tuned for tall desktop
+       sections). On a short mobile viewport that drags the footer up over
+       the last projects and the "More work" button before they're seen. */
+    transform: none !important;
   }
 
   .body {

@@ -8,8 +8,13 @@ export default function Index({ children, backgroundColor = "#455CE9", ...attrib
   let timeline = useRef(null);
   let timeoutId = null;
 
-  // Helper function to check screen size dynamically
-  const isMobile = () => typeof window !== "undefined" && window.innerWidth < 768;
+  // Whether this pointer can actually hover (mouse/trackpad) vs. touch-only.
+  // Was viewport-width based, which disagreed with the CSS :hover rule below
+  // (a real mouse on a narrow window still hovers) and, on real phones, left
+  // the text turned white with no matching circle fill.
+  const isMobile = () =>
+    typeof window !== "undefined" &&
+    !window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   useEffect(() => {
     timeline.current = gsap.timeline({ paused: true });

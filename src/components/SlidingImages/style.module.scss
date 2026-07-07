@@ -47,24 +47,8 @@
 }
 @media (max-width: 768px) {
     .slidingImages {
-        // The sliders are 120vw wide at left:-10vw and get pushed further by
-        // the scroll-driven x transforms, so clip the horizontal overflow to
-        // stop the page scrolling sideways. overflow-x:clip (not hidden) avoids
-        // creating a vertical scroll container.
-        overflow-x: clip;
-
-        .slider {
-            .project {
-                // 20vw is only ~78px tall on a phone — bump it so thumbnails
-                // are legible.
-                height: 35vw;
-            }
-        }
-
-        .circleContainer {
-            // .circle is display:none, so the 350px margin is pure dead space
-            // — nearly a full screen of blank white on mobile.
-            margin-top: 100px;
-        }
+        // Parallax project strip reads as clutter on a phone-width screen
+        // right before the footer — drop it there.
+        display: none;
     }
 }
