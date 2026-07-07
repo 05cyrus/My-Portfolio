@@ -28,9 +28,16 @@ import projects from './data';
           })
         }
       <div className={styles.moreWorkSpacing}>
-        <Rounded>
-          <p>More work</p>
-        </Rounded>
+        <a
+          href="https://github.com/05cyrus"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: 'inherit', textDecoration: 'none' }}
+        >
+          <Rounded>
+            <p>More work</p>
+          </Rounded>
+        </a>
       </div>
       </div>
       <Modal modal={modal} projects={projects}/>

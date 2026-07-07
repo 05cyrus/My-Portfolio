@@ -18,11 +18,14 @@ const panelAnim = {
 
 export default function ProjectDetail({ project, onClose }) {
   // Lock page scrolling while the case study is open, close on Escape.
+  // Also flags <body> so the mobile burger menu (a sibling tree with no
+  // shared state) can hide itself instead of floating above the modal.
   useEffect(() => {
     const prevHtml = document.documentElement.style.overflow;
     const prevBody = document.body.style.overflow;
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('project-modal-open');
 
     const onKey = (e) => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', onKey);
@@ -30,6 +33,7 @@ export default function ProjectDetail({ project, onClose }) {
     return () => {
       document.documentElement.style.overflow = prevHtml;
       document.body.style.overflow = prevBody;
+      document.body.classList.remove('project-modal-open');
       window.removeEventListener('keydown', onKey);
     };
   }, [onClose]);
