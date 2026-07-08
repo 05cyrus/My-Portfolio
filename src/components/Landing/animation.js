@@ -29,7 +29,7 @@ const TextPressure = ({
   const cursorRef = useRef({ x: 0, y: 0 });
 
   // rAF loop control: only run while there is something to animate (mouse
-  // catching up) and while the heading is on screen — otherwise it thrashes
+  // catching up) and while the heading is on screen - otherwise it thrashes
   // layout on the main thread every frame for no visible change.
   const rafRef = useRef(null);
   const runningRef = useRef(false);
@@ -131,7 +131,7 @@ const TextPressure = ({
       mouseRef.current.y += (cursorRef.current.y - mouseRef.current.y) / 15;
 
       if (titleRef.current) {
-        // Batch ALL layout reads first, then ALL writes — this collapses the
+        // Batch ALL layout reads first, then ALL writes - this collapses the
         // former read-after-write reflow per character into a single layout.
         const titleRect = titleRef.current.getBoundingClientRect();
         const maxDist = titleRect.width / 2;

@@ -7,10 +7,10 @@ import Magnetic from '../../common/Magnetic';
 import Rounded from '../../common/RoundedButton';
 
 // `pull` is how far (px) the whole section rises over the preceding content as
-// it scrolls in — a curtain reveal. It only looks right when there's a spare
+// it scrolls in - a curtain reveal. It only looks right when there's a spare
 // section above it to slide over (the home page's SlidingImages). On the Work
 // and About routes Contact sits directly under the page's own content, so the
-// rise would bury the last rows — those pages pass pull={0}.
+// rise would bury the last rows - those pages pass pull={0}.
 export default function index({ pull = 500 }) {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({

@@ -14,19 +14,19 @@ const roles = [
   {
     company: '18th Digitech',
     title: 'Commerce Developer',
-    period: 'Jul 2025 — Present',
+    period: 'Jul 2025 - Present',
     points: [
-      'Migrated a multi-vendor Magento marketplace (PriMedEq) to Magento 2.4.8 / PHP 8.4 — Webkul, ElasticSuite & OpenSearch, payment gateways, and 100% of the legacy module codebase modernised with Rector.',
+      'Migrated a multi-vendor Magento marketplace (PriMedEq) to Magento 2.4.8 / PHP 8.4 - Webkul, ElasticSuite & OpenSearch, payment gateways, and 100% of the legacy module codebase modernised with Rector.',
       'Engineered a ~100-file REST order-integration module with Service Contracts, idempotent processing, OAuth 1.0a, retry via cron/CLI and a full admin audit log.',
-      'Built custom Magento modules — bulk review APIs (MoEngage), colour-group swatches with variant-based pricing, and a DPDPA consent-compliance module with audit trails.',
+      'Built custom Magento modules - bulk review APIs (MoEngage), colour-group swatches with variant-based pricing, and a DPDPA consent-compliance module with audit trails.',
       'Recovered a compromised WordPress platform: traced and removed malicious code injections, upgraded PHP 7.4 → 8.4, and audited every plugin.',
-      'Instrumented GA4 e-commerce analytics end to end — 9+ data layer events from add_to_cart to add_payment_info.',
+      'Instrumented GA4 e-commerce analytics end to end - 9+ data layer events from add_to_cart to add_payment_info.',
     ],
   },
   {
     company: 'Naturemonks (NGO)',
     title: 'Web Developer',
-    period: 'Nov 2024 — Mar 2025',
+    period: 'Nov 2024 - Mar 2025',
     points: [
       'Developed and maintained WordPress websites with a focus on performance, accessibility and mobile responsiveness.',
       'Customised themes and plugins and resolved frontend–backend integration issues to improve site stability.',
