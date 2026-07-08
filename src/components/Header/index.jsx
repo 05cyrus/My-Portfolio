@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import styles from './style.module.scss';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
@@ -57,33 +58,38 @@ export default function index() {
         return () => mm.revert()
     }, [])
 
+    // /work and /about sit on light backgrounds — flip the header text dark.
+    const onLightPage = pathname === '/work' || pathname === '/about';
+
     return (
         <>
-        <div ref={header} className={styles.header}>
-            <div className={styles.logo}>
-                <p className={styles.copyright}>©</p>
-                <div className={styles.name}>
-                    <p className={styles.codeBy}>Code by</p>
-                    <p className={styles.sumit}>Sumit</p>
-                    <p className={styles.gusain}>Gusain</p>
+        <div ref={header} className={`${styles.header} ${onLightPage ? styles.dark : ''}`}>
+            <Link href="/" className={styles.logoLink}>
+                <div className={styles.logo}>
+                    <p className={styles.copyright}>©</p>
+                    <div className={styles.name}>
+                        <p className={styles.codeBy}>Code by</p>
+                        <p className={styles.sumit}>Sumit</p>
+                        <p className={styles.gusain}>Gusain</p>
+                    </div>
                 </div>
-            </div>
+            </Link>
             <div className={styles.nav}>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a>Work</a>
+                        <Link href="/work">Work</Link>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a>About</a>
+                        <Link href="/about">About</Link>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a>Contact</a>
+                        <Link href="/contact">Contact</Link>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>

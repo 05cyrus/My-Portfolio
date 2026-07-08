@@ -1,4 +1,5 @@
 import styles from './style.module.scss';
+import Link from 'next/link';
 import { useInView, motion } from 'framer-motion';
 import { useRef } from 'react';
 import { slideUp, opacity } from './anim';
@@ -37,9 +38,11 @@ export default function Index() {
           Commerce (Magento 2), PHP, JavaScript, React and MySQL.
         </motion.p>
         <div data-scroll data-scroll-speed={0.01} className={styles.buttonContainer}>
-          <Rounded className={styles.button}>
-            <p>About me</p>
-          </Rounded>
+          <Link href="/about" style={{ color: 'inherit', textDecoration: 'none' }}>
+            <Rounded className={styles.button}>
+              <p>About me</p>
+            </Rounded>
+          </Link>
         </div>
       </div>
     </div>

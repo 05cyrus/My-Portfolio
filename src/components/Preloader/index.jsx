@@ -6,7 +6,11 @@ import { opacity, slideUp } from './anim';
 
 const words = ["Hello", "Bonjour", "Ciao", "Olà", "やあ", "Hallå", "Guten tag", "Hallo"]
 
-export default function Index() {
+// With no props this is the home intro (cycling greetings). Pass `title` to
+// use it as a page intro instead — it shows just that word (e.g. "Work"),
+// then the parent unmounts it and the same curve swipe-up plays.
+export default function Index({ title = null }) {
+    const displayWords = title ? [title] : words;
     const [index, setIndex] = useState(0);
     const [dimension, setDimension] = useState({width: 0, height:0});
 
@@ -15,11 +19,12 @@ export default function Index() {
     }, [])
 
     useEffect( () => {
+        if(title) return;
         if(index == words.length - 1) return;
         setTimeout( () => {
             setIndex(index + 1)
         }, index == 0 ? 1000 : 150)
-    }, [index])
+    }, [index, title])
 
     const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width/2} ${dimension.height + 300} 0 ${dimension.height}  L0 0`
     const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width/2} ${dimension.height} 0 ${dimension.height}  L0 0`
@@ -39,7 +44,7 @@ export default function Index() {
         <motion.div variants={slideUp} initial="initial" exit="exit" className={styles.introduction}>
             {dimension.width > 0 && 
             <>
-                <motion.p variants={opacity} initial="initial" animate="enter"><span></span>{words[index]}</motion.p>
+                <motion.p variants={opacity} initial="initial" animate="enter"><span></span>{displayWords[index]}</motion.p>
                 <svg>
                     <motion.path variants={curve} initial="initial" exit="exit"></motion.path>
                 </svg>
