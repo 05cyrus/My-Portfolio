@@ -56,9 +56,25 @@
             }
         }
     }
+    // Dark-text variant for routes with a light background (/work, /about).
+    &.dark{
+        color: #1c1d20;
+        .nav .el .indicator{
+            background-color: #1c1d20;
+        }
+    }
+    .logoLink{
+        color: inherit;
+        text-decoration: none;
+    }
     .nav{
         display: flex;
         align-items: center;
+
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
 
         .el{
             display: flex;

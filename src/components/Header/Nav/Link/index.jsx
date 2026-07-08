@@ -1,17 +1,11 @@
 import styles from './style.module.scss';
+import NextLink from 'next/link';
 import { motion } from 'framer-motion';
 import { slide, scale } from '../../animation';
-import { scrollToSection } from '../../../../common/smoothScroll';
 
 export default function Index({data, isActive, setSelectedIndicator, closeMenu}) {
 
     const { title, href, index} = data;
-
-    const handleClick = (e) => {
-      e.preventDefault();
-      scrollToSection(href); // href is a section anchor, e.g. "#work"
-      closeMenu?.();
-    };
 
     return (
       <motion.div
@@ -28,7 +22,7 @@ export default function Index({data, isActive, setSelectedIndicator, closeMenu})
           animate={isActive ? "open" : "closed"}
           className={styles.indicator}>
         </motion.div>
-        <a href={href} onClick={handleClick}>{title}</a>
+        <NextLink href={href} onClick={() => closeMenu?.()}>{title}</NextLink>
       </motion.div>
     )
 }
