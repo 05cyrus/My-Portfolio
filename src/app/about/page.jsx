@@ -83,7 +83,7 @@ export default function AboutPage() {
         </div>
         <Reveal className={styles.portrait}>
           <Image
-            src="/images/profile.jpg"
+            src="/images/me.png"
             alt="Sumit Gusain"
             fill={true}
             sizes="(max-width: 768px) 80vw, 450px"
