@@ -37,7 +37,7 @@ const roles = [
 const skills = [
   'C++', 'Python', 'JavaScript', 'PHP', 'Node.js', 'Adobe Commerce (Magento 2)',
   'WordPress', 'React.js', 'HTML/CSS', 'Bootstrap', 'jQuery', 'MySQL',
-  'PostgreSQL', 'MongoDB', 'Figma', 'REST APIs', 'GraphQL',
+  'PostgreSQL', 'MongoDB', 'Figma', 'Uipath', 'REST APIs', 'GraphQL',
   'Data Structures and Algorithms', 'DBMS', 'OOPS',
 ];
 
