@@ -67,7 +67,7 @@ export default function AboutPage() {
         <div className={styles.heroTop}>
           <h1>
             I help e-commerce brands run storefronts that stay fast, stable and
-            secure — and I own problems until they are fixed.
+            secure - and I own problems until they are fixed.
           </h1>
           <div className={styles.heroAside}>
             <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
