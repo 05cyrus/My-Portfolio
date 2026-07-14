@@ -17,7 +17,7 @@ export default function Home() {
   const scrollRef = useRef<LocomotiveScrollType | null>(null); // ✅ type-safe ref
 
   useEffect(() => {
-    // Unlock interactivity on a fixed timer that starts immediately — do NOT
+    // Unlock interactivity on a fixed timer that starts immediately - do NOT
     // stack it behind the locomotive-scroll dynamic import, which used to delay
     // the whole intro by the chunk's download/parse time.
     const timer = setTimeout(() => {

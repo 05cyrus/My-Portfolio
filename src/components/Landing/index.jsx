@@ -8,7 +8,7 @@ import { Roboto_Flex } from 'next/font/google';
 import TextPressure from './animation';
 
 // Self-hosted, OFL-licensed variable font (weight 100-1000 + width 25-151)
-// that drives the hero "pressure" effect — no third-party/runtime request.
+// that drives the hero "pressure" effect - no third-party/runtime request.
 const pressureFont = Roboto_Flex({
   subsets: ['latin'],
   axes: ['wdth'],

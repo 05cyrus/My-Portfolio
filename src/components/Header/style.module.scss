@@ -194,12 +194,12 @@
     top: 1rem;
     right: 1rem;
     z-index: 999;
-    /* Reveal the burger on mobile — the GSAP scroll effect that normally scales
+    /* Reveal the burger on mobile - the GSAP scroll effect that normally scales
        it in is skipped below 768px, so pin it visible here. */
     transform: scale(1);
 
     /* Header and the project detail modal are separate, unconnected component
-       trees (no shared state) — ProjectDetail toggles this class on <body>
+       trees (no shared state) - ProjectDetail toggles this class on <body>
        instead, since the burger's z-index:999 otherwise floats above it. */
     :global(body.project-modal-open) & {
       display: none;

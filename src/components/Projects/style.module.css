@@ -1,6 +1,6 @@
 .main{
     display: flex;
-    /* was height:100vh — with 6 project rows the content is taller than the
+    /* was height:100vh - with 6 project rows the content is taller than the
        viewport and, combined with align-items:center, overflowed upward over
        the Experience section. Let the section grow with its content instead. */
     min-height: 100vh;

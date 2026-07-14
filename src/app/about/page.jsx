@@ -11,7 +11,7 @@ const services = [
   {
     number: '01',
     title: 'Commerce Development',
-    text: 'Custom Adobe Commerce (Magento 2) modules, configurable product architecture with dynamic swatches and variant-based pricing, and full platform migrations — up to Magento 2.4.8 on PHP 8.4 — built to stay stable in production.',
+    text: 'Custom Adobe Commerce (Magento 2) modules, configurable product architecture with dynamic swatches and variant-based pricing, and full platform migrations - up to Magento 2.4.8 on PHP 8.4 - built to stay stable in production.',
   },
   {
     number: '02',
@@ -21,21 +21,21 @@ const services = [
   {
     number: '03',
     title: 'The full package',
-    text: 'WordPress security forensics and recovery, React 19 + TypeScript applications, accessibility-first offline PWAs and performance work — end-to-end ownership from investigation and debugging to production release.',
+    text: 'WordPress security forensics and recovery, React 19 + TypeScript applications, accessibility-first offline PWAs and performance work - end-to-end ownership from investigation and debugging to production release.',
   },
 ];
 
 const education = [
-  { name: 'Inderprastha Engineering College — B.Tech, Computer Science', period: '2021 — 2025' },
-  { name: 'Vivekanand School, Delhi — Senior Secondary (90%)', period: '2019 — 2021' },
-  { name: 'St. Thomas School, Uttar Pradesh — Secondary (90.2%)', period: '2019' },
+  { name: 'Inderprastha Engineering College - B.Tech, Computer Science', period: '2021 - 2025' },
+  { name: 'Vivekanand School, Delhi - Senior Secondary (90%)', period: '2019 - 2021' },
+  { name: 'St. Thomas School, Uttar Pradesh - Secondary (90.2%)', period: '2019' },
 ];
 
 const certifications = [
-  'ReactJS Course — Infosys Springboard',
-  'Data Analytics Essentials — Cisco Networking Academy',
-  'Database Foundations — Oracle Academy',
-  'Generative AI — Google Cloud & Coursera',
+  'ReactJS Course - Infosys Springboard',
+  'Data Analytics Essentials - Cisco Networking Academy',
+  'Database Foundations - Oracle Academy',
+  'Generative AI - Google Cloud & Coursera',
 ];
 
 function Reveal({ children, delay = 0, className }) {
@@ -75,8 +75,8 @@ export default function AboutPage() {
             </svg>
             <p>
               Commerce Developer at 18th Digitech and a B.Tech in Computer
-              Science. I work across the whole commerce stack — Adobe Commerce
-              (Magento 2), PHP, WordPress, React and MySQL — for brands like
+              Science. I work across the whole commerce stack - Adobe Commerce
+              (Magento 2), PHP, WordPress, React and MySQL - for brands like
               Mufti, Forever New, Joyalukkas, TTK Prestige and Asics.
             </p>
           </div>

@@ -34,10 +34,10 @@ export default function ContactPage() {
 
   const update = (key) => (e) => setForm((prev) => ({ ...prev, [key]: e.target.value }));
 
-  // No backend — compose the enquiry into a prefilled mail instead.
+  // No backend - compose the enquiry into a prefilled mail instead.
   const handleSubmit = (e) => {
     e.preventDefault();
-    const subject = `Project enquiry${form.organization ? ` — ${form.organization}` : ''}`;
+    const subject = `Project enquiry${form.organization ? ` - ${form.organization}` : ''}`;
     const body = [
       `Name: ${form.name}`,
       `Email: ${form.email}`,

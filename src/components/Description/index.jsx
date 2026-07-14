@@ -34,7 +34,7 @@ export default function Index() {
           className={styles.subtext}
         >
           From custom module engineering and REST integrations to full platform migrations,
-          security forensics and analytics — I work across the whole commerce stack: Adobe
+          security forensics and analytics - I work across the whole commerce stack: Adobe
           Commerce (Magento 2), PHP, JavaScript, React and MySQL.
         </motion.p>
         <div data-scroll data-scroll-speed={0.01} className={styles.buttonContainer}>

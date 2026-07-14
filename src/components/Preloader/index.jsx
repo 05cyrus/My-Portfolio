@@ -7,7 +7,7 @@ import { opacity, slideUp } from './anim';
 const words = ["Hello", "Bonjour", "Ciao", "Olà", "やあ", "Hallå", "Guten tag", "Hallo"]
 
 // With no props this is the home intro (cycling greetings). Pass `title` to
-// use it as a page intro instead — it shows just that word (e.g. "Work"),
+// use it as a page intro instead - it shows just that word (e.g. "Work"),
 // then the parent unmounts it and the same curve swipe-up plays.
 export default function Index({ title = null }) {
     const displayWords = title ? [title] : words;

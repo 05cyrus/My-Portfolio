@@ -58,7 +58,7 @@ export default function index() {
         return () => mm.revert()
     }, [])
 
-    // /work and /about sit on light backgrounds — flip the header text dark.
+    // /work and /about sit on light backgrounds - flip the header text dark.
     const onLightPage = pathname === '/work' || pathname === '/about';
 
     return (

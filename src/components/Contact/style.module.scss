@@ -187,13 +187,13 @@
     align-items: center;
     gap: 1rem;
     /* desktop .contact .body .title has 200px side margins that this rule can't
-       beat without !important — 400px of margin overflows a 390px screen. */
+       beat without !important - 400px of margin overflows a 390px screen. */
     margin-left: 0 !important;
     margin-right: 0 !important;
     padding-bottom: 2rem !important;
     width: 100%;
 
-    /* decorative arrow is absolutely positioned at left:100% — hide the
+    /* decorative arrow is absolutely positioned at left:100% - hide the
        right-edge overhang on mobile. */
     svg {
       display: none;

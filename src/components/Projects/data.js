@@ -1,4 +1,4 @@
-// Case-study content for each project — rendered in the list rows, the
+// Case-study content for each project - rendered in the list rows, the
 // hover-preview modal, and the click-to-open ProjectDetail overlay.
 const projects = [
   {
@@ -91,7 +91,7 @@ const projects = [
     ],
     contributions: [
       "Integrated Google Analytics 4 into the e-commerce platform.",
-      "Engineered data layer events across the purchase journey — view_item, add_to_cart, begin_checkout and the full purchase flow.",
+      "Engineered data layer events across the purchase journey - view_item, add_to_cart, begin_checkout and the full purchase flow.",
       "Ensured accurate product, pricing, and variant data.",
       "Validated analytics events using browser debugging tools.",
       "Improved reporting accuracy for marketing and business teams.",
@@ -100,7 +100,7 @@ const projects = [
   },
   {
     title: "Parkinson's Therapy",
-    subtitle: "React 19 · TypeScript · PWA — Healthcare Platform",
+    subtitle: "React 19 · TypeScript · PWA - Healthcare Platform",
     src: "parkinsons.webp",
     color: "#EFE8D3",
     link: "https://parkinson-therapy.vercel.app/",

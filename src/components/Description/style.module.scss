@@ -45,7 +45,7 @@
         /* The absolute positioning lives on this outer container, NOT on the
            button itself: the Magnetic/GSAP hover effect transforms the button's
            wrapper, and a transformed ancestor becomes the containing block for
-           absolute children — which made the circle jump around on hover. */
+           absolute children - which made the circle jump around on hover. */
         .buttonContainer{
             position: absolute;
             top: calc(100% + 20px);
@@ -110,14 +110,14 @@
     .mask span {
       display: inline-block;
       white-space: normal;
-      font-size: 1.5rem; /* was "1.5 rem" — the space made it an invalid length, so desktop 2rem leaked through */
+      font-size: 1.5rem; /* was "1.5 rem" - the space made it an invalid length, so desktop 2rem leaked through */
     }
 
     .body p:nth-of-type(2) {
       width: 100%; /* override desktop width:80% so the subtext fills the phone column */
     }
 
-    /* Keep the "About me" CTA (and its blue hover-circle) hidden on mobile —
+    /* Keep the "About me" CTA (and its blue hover-circle) hidden on mobile -
        it doesn't lay out cleanly here. */
     .button {
       display: none;
