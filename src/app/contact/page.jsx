@@ -12,7 +12,7 @@ const fields = [
   { key: 'name', number: '01', label: "What's your name?", placeholder: 'John Doe *', type: 'text' },
   { key: 'email', number: '02', label: "What's your email?", placeholder: 'john@doe.com *', type: 'email' },
   { key: 'organization', number: '03', label: "What's the name of your organization?", placeholder: 'John & Doe ®', type: 'text' },
-  { key: 'services', number: '04', label: 'What services are you looking for?', placeholder: 'Magento build, Migration, API integration...', type: 'text' },
+  { key: 'services', number: '04', label: "What are you reaching out about?", placeholder: 'Role, full-stack build, API integration, mobile app...', type: 'text' },
 ];
 
 export default function ContactPage() {
@@ -109,10 +109,10 @@ export default function ContactPage() {
               <Magnetic><p><a href="tel:+917982416604">Chat on WhatsApp</a></p></Magnetic>
             </div>
             <div className={styles.detailGroup}>
-              <h3>Business Details</h3>
+              <h3>Details</h3>
               <p>Sumit Gusain</p>
-              <p>Commerce Developer</p>
-              <p>New Delhi, India</p>
+              <p>Full-Stack Developer</p>
+              <p>Delhi NCR, India</p>
             </div>
             <div className={styles.detailGroup}>
               <h3>Socials</h3>

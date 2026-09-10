@@ -58,6 +58,25 @@
   height: 300px;
 }
 
+/* Positioning line under the hero headline - what I build, then the stack a
+   recruiter is scanning for. Sits inside .description, which is absolutely
+   positioned and re-anchored to the bottom on mobile. */
+.tagline {
+  max-width: 28ch;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.45;
+  margin: 24px 0 10px 0 !important;
+}
+
+.stack {
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  opacity: 0.75;
+  margin: 0 !important;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .main {
@@ -96,5 +115,15 @@
   .description svg {
     margin-bottom: 20px;
     transform: scale(1.5);
+  }
+
+  .tagline {
+    max-width: none;
+    font-size: 15px;
+    margin: 14px 0 6px 0 !important;
+  }
+
+  .stack {
+    font-size: 12px;
   }
 }

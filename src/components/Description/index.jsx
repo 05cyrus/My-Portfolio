@@ -7,7 +7,7 @@ import Rounded from '../../common/RoundedButton';
 
 export default function Index() {
   const phrase =
-    'From platform migrations to custom modules and security recovery, I build e-commerce that holds up. Commerce Developer at 18th Digitech, shipping Magento 2 and WordPress storefronts for Mufti, TTK Prestige, Joyalukkas and Asics.';
+    'I build production web applications, mobile apps and the APIs behind them. Nearly two years shipping to live platforms used by real customers - and a habit of building well outside that stack on my own time, from offline-first PWAs to real-time multiplayer engines.';
 
   const description = useRef(null);
   const isInView = useInView(description);
@@ -33,9 +33,11 @@ export default function Index() {
           animate={isInView ? 'open' : 'closed'}
           className={styles.subtext}
         >
-          From custom module engineering and REST integrations to full platform migrations,
-          security forensics and analytics - I work across the whole commerce stack: Adobe
-          Commerce (Magento 2), PHP, JavaScript, React and MySQL.
+          Full-stack developer at 18th Digitech. React 19, Next.js, TypeScript and React
+          Native on the front; PHP service layers, REST and GraphQL APIs, message queues and
+          MySQL behind them. Most of my professional work is large-scale e-commerce - which is
+          where I learned idempotency, query plans and what production actually does to your
+          assumptions.
         </motion.p>
         <div data-scroll data-scroll-speed={0.01} className={styles.buttonContainer}>
           <Link href="/about" style={{ color: 'inherit', textDecoration: 'none' }}>

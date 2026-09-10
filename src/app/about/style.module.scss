@@ -64,8 +64,8 @@
 
     .serviceGrid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 60px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px 80px;
 
       .service {
         border-top: 1px solid rgb(201, 201, 201);
@@ -75,7 +75,7 @@
           font-size: 14px;
           font-weight: 300;
           color: rgb(134, 134, 134);
-          margin: 0 0 50px 0;
+          margin: 0 0 36px 0;
         }
 
         h2 {
@@ -90,6 +90,23 @@
           line-height: 1.6;
           margin: 0;
         }
+      }
+    }
+  }
+
+  // Narrative block between the services grid and the credentials columns -
+  // two readable columns of prose, collapsing to one on mobile.
+  .story {
+    padding: 0 100px 120px 100px;
+
+    .storyBody {
+      max-width: 880px;
+
+      p {
+        font-size: 16.5px;
+        font-weight: 300;
+        line-height: 1.75;
+        margin: 0 0 26px 0;
       }
     }
   }
@@ -163,6 +180,19 @@
       .serviceGrid {
         grid-template-columns: 1fr;
         gap: 40px;
+      }
+    }
+
+    .story {
+      padding: 0 20px 80px 20px;
+
+      .storyBody {
+        max-width: none;
+
+        p {
+          font-size: 15px;
+          line-height: 1.7;
+        }
       }
     }
 

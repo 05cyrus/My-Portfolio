@@ -5,9 +5,9 @@ import Header from "../components/Header";
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata = {
-  title: "Sumit Gusain - Commerce Developer",
+  title: "Sumit Gusain - Full-Stack Developer",
   description:
-    "Portfolio of Sumit Gusain, Commerce Developer at 18th Digitech - Adobe Commerce (Magento 2), WordPress, PHP and JavaScript engineering: platform migrations, REST integrations, security forensics and e-commerce analytics.",
+    "Portfolio of Sumit Gusain, full-stack developer - React, Next.js, TypeScript, React Native, PHP, REST/GraphQL APIs and MySQL. Nearly two years shipping and supporting production web and mobile platforms, plus self-directed work in offline-first PWAs, real-time multiplayer and AI integration.",
 };
 
 export default function RootLayout({ children }) {

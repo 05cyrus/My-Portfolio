@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Work - Sumit Gusain",
   description:
-    "Selected work by Sumit Gusain - Adobe Commerce (Magento 2) builds and migrations, REST integrations, WordPress security recovery and analytics for brands like Mufti, Forever New, Joyalukkas, TTK Prestige and Asics.",
+    "Selected work by Sumit Gusain - a production React Native e-commerce app, a REST integration API, an offline-first React 19 healthcare PWA, WebRTC multiplayer games, a Next.js app on the Claude API, and platform engineering for brands like Mufti, Forever New, Joyalukkas and Asics.",
 };
 
 export default function WorkLayout({ children }) {

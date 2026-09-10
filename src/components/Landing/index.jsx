@@ -110,8 +110,8 @@ export default function Landing() {
       />
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
-          <p ref={firstText}>Software Engineer -</p>
-          <p ref={secondText}>Software Engineer -</p>
+          <p ref={firstText}>Software Developer -</p>
+          <p ref={secondText}>Software Developer -</p>
         </div>
       </div>
       
@@ -121,7 +121,7 @@ export default function Landing() {
         </svg>
         <div style={styles.TextPressure}>
   <TextPressure
-    text="Commerce Developer"
+    text="Full-Stack Developer"
     fontFamily={pressureFont.style.fontFamily}
     flex={true}
     alpha={false}
@@ -134,6 +134,8 @@ export default function Landing() {
     minFontSize={36}
   />
 </div>
+        <p className={styles.tagline}>I build production web apps, mobile apps and the APIs behind them.</p>
+        <p className={styles.stack}>React · TypeScript · Next.js · React Native · PHP · MySQL</p>
       </div>
     </main>
   )

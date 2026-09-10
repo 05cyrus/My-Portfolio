@@ -1,0 +1,238 @@
+ **Notekeep** — Full Stack Note-Taking Application
+- **Type:** Full Stack Web Application
+- **Architecture:** 
+  - **Frontend:** React + Vite
+  - **Backend:** Express.js + Node.js
+  - **Database:** PostgreSQL
+- **Key Technologies:**
+  - React with Hooks (useState, useEffect)
+  - Material-UI Components (Fab, Zoom, Icons)
+  - Axios for HTTP requests
+  - Express.js with body-parser & CORS
+  - PostgreSQL via pg driver
+  - Environment variables (dotenv)
+- **Skills Demonstrated:**
+  - Full-stack JavaScript development
+  - React component architecture
+  - RESTful API design
+  - Database design and queries
+  - Client-server communication
+  - CRUD operations
+- **Key Features:**
+  - Create, read, delete notes
+  - Expandable note creation form
+  - Material Design UI
+  - Cross-origin resource sharing (CORS)
+
+---
+**My-Portfolio** — Advanced Portfolio Site
+- **Type:** Portfolio Website
+- **Tech Stack:**
+  - Next.js 15+ (App Router)
+  - React 19
+  - TypeScript
+  - Tailwind CSS 4
+  - Framer Motion (animations)
+  - Locomotive Scroll (smooth scrolling)
+  - SCSS Modules
+  - Next Image Optimization
+  - AVIF/WebP image formats
+- **Architecture Highlights:**
+  - Next.js metadata API
+  - Dynamic page generation
+  - Image optimization
+  - Smooth scroll custom hook
+  - Page load sequences with animations
+  - SEO optimization
+- **Skills Demonstrated:**
+  - Next.js 15 advanced patterns
+  - React 19 features
+  - Advanced CSS animations
+  - Image optimization
+  - Responsive design
+  - Custom hooks
+  - Professional UI/UX
+- **Content Highlights:**
+  - Adobe Commerce (Magento 2) builds
+  - WordPress security forensics
+  - REST integrations
+  - React applications
+
+ **simon_game** — Simon Memory Game
+- **Type:** Interactive Web Game
+- **Tech Stack:**
+  - HTML5
+  - CSS3 (animations, flexbox)
+  - JavaScript (Vanilla)
+  - jQuery 3.3.1
+- **Features:**
+  - Progressive level difficulty
+  - Sound effects
+  - Color animations
+  - Game over state
+- **Skills:** Basic game logic, DOM manipulation, event handling
+ **drumkit** — Interactive Drum Kit
+- **Type:** Web Audio Application
+- **Tech Stack:**
+  - HTML5
+  - CSS3 (grid, animations)
+  - JavaScript (Vanilla)
+- **Features:**
+  - Keyboard and button triggers
+  - Audio playback
+  - Visual feedback
+- **Skills:** Web Audio API, event listeners, animation
+
+
+ **MUFTI Mobile App** —E-commerce Mobile Application
+- **Type:**Cross-Platform E-commerce Mobile Application
+- **Architecture:** 
+  - **Frontend:** React Native + TypeScript
+  - **Backend:** Magento 2 GraphQL
+  - **Database:** Mysql
+  - **Platforms:** Android + iOS 
+- **Key Technologies:**
+  - React Native 0.83.1 with React 19.2
+  - TypeScript
+  - React Navigation 7
+  - Apollo Client + GraphQL
+  - Redux Toolkit
+  - React Native Keychain for secure authentication tokens
+  - Shiprocket Fastrr for hosted checkout
+  - Razorpay for payments
+  - Firebase FCM, Analytics & Crashlytics
+  - Notifee for notifications
+  - Fastly CDN for GraphQL caching
+  - HMAC request signing
+  - Deep Linking & Universal/App Links
+- **Skills Demonstrated:**
+  - Cross-platform mobile application development
+  - React Native component architecture
+  - TypeScript development
+  - Magento 2 GraphQL integration
+  - State management with Redux Toolkit
+  - API/service-layer architecture
+  - Authentication & secure token management
+  - E-commerce business logic
+  - Payment & checkout integration
+  - Push notifications and analytics
+  - Deep linking and navigation
+  - API caching and performance optimization
+  - Mobile application security
+- **Key Features:**
+  - Product browsing and category-based product listings
+  - Product search and dynamic filtering
+  - Product details with configurable size/color variants
+  - Guest and authenticated shopping carts  
+  - Wishlist and shared wishlist functionality
+  - OTP-based customer authentication
+  - Shiprocket Fastrr checkout
+  - Razorpay payment integration
+  - Online and in-store order history
+  - Order cancellation, reorder and returns
+  - Loyalty functionality
+  - Push notifications
+  - Deep links for products, categories, search and CMS pages
+  - Firebase/GA4 and Meta analytics
+  - In-app application updates
+  - Root/jailbreak detection and request security
+  
+  **Updated-Therapy-Game-For-Parkinson-Disease** — Therapeutic Web App
+- **Type:** Web Application (PWA)
+- **Tech Stack:**
+  - React + Vite
+  - TypeScript
+  - Tailwind CSS
+  - Vite PWA Plugin
+  - Playwright (e2e testing)
+  - Internationalization support
+- **Features:**
+  - Accessible design
+  - Tablet-first UI
+  - Therapy exercises
+  - Progress tracking
+  - Multi-profile support
+  - Offline capabilities
+- **Skills Demonstrated:**
+  - Accessibility (a11y)
+  - Healthcare application development
+  - PWA patterns
+  - E2E testing
+  - i18n implementation
+  - User-centered design
+
+   **DropWatch-major-project-** — Crypto Dashboard
+- **Type:** Web Application
+- **Tech Stack:**
+  - React + CRA (Create React App)
+  - JavaScript
+  - Material-UI (Emotion styling)
+  - React Router
+- **Features:**
+  - Cryptocurrency tracking
+  - Price comparisons
+  - Dashboard
+- **Skills:** React routing, Material-UI, data visualization
+
+**Other React Applications** (Glowzy, Portfolio, zensya-*, glowzy-mini, etc.)
+- **Type:** Portfolio & Showcase Sites
+- **Tech Stack Variants:**
+  - React + CRA
+  - React + Vite
+  - Tailwind CSS
+  - Framer Motion (some projects)
+  - Spline 3D (glowzy-mini)
+- **Skills:** React component libraries, animations, responsive design
+
+**OrderIntegeration-Magento-Module** — Production Magento Module
+- **Type:** Backend Module (Enterprise E-commerce)
+- **Tech Stack:**
+  - PHP 7.4+
+  - Magento 2.4.x / Adobe Commerce
+  - Dependency Injection
+  - Admin UI framework
+  - Cron jobs
+  - REST API
+  - Logging system
+- **Architecture:**
+  - Models, Blocks, Controllers, Helpers
+  - Service classes
+  - API facades
+  - Data objects (immutable DTOs)
+  - Exception handling
+  - Retry mechanisms
+- **Key Features:**
+  - Order creation via REST API
+  - Idempotent processing (concurrency safe)
+  - Order lifecycle management (status, invoice, shipment, tracking)
+  - Automatic retry mechanism (3 attempts default)
+  - Admin log grid UI
+  - Request/response logging
+  - Cron-based cleanup
+- **Skills Demonstrated:**
+  - Enterprise PHP development
+  - Magento 2 architecture
+  - API design (idempotency)
+  - Cron job scheduling
+  - Admin UI customization
+  - Exception handling patterns
+  - Logging and debugging
+  - Production-grade code organization
+
+ **MagentoCustom_import** — Magento Import Module
+- **Type:** Backend Module
+- **Tech Stack:**
+  - PHP
+  - Magento (Adobe Commerce)
+- **Skills:** Magento customization, data import/export
+
+**mandiran** — Mondrian Art Project
+- **Type:** HTML/CSS Art
+- **Tech Stack:**
+  - HTML5
+  - CSS3 (CSS Grid)
+- **Features:**
+  - CSS Grid layout
+  - Color theory application
+  - Responsive design
+- **Skills:** CSS Grid, responsive design, layout

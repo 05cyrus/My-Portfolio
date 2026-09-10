@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Contact - Sumit Gusain",
   description:
-    "Start a project with Sumit Gusain - Commerce Developer for Adobe Commerce (Magento 2), WordPress, REST integrations and React applications. Based in New Delhi, India.",
+    "Get in touch with Sumit Gusain - full-stack developer working in React, Next.js, TypeScript, React Native, PHP and REST/GraphQL APIs. Based in Delhi NCR, India.",
 };
 
 export default function ContactLayout({ children }) {

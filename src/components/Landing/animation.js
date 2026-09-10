@@ -261,7 +261,10 @@ const TextPressure = ({
               color: stroke ? undefined : textColor
             }}
           >
-            {char}
+            {/* A plain space inside an inline-block collapses to zero width,
+                which silently welded the headline's words together. Render it
+                as a non-breaking space so the word gap survives. */}
+            {char === ' ' ? '\u00A0' : char}
           </span>
         ))}
       </h1>

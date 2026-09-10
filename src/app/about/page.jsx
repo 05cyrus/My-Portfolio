@@ -10,18 +10,23 @@ import usePageLoad from '../../common/usePageLoad';
 const services = [
   {
     number: '01',
-    title: 'Commerce Development',
-    text: 'Custom Adobe Commerce (Magento 2) modules, configurable product architecture with dynamic swatches and variant-based pricing, and full platform migrations - up to Magento 2.4.8 on PHP 8.4 - built to stay stable in production.',
+    title: 'Full-Stack Product Development',
+    text: 'React 19, Next.js App Router and TypeScript front ends over PHP or Node service layers, with MySQL and PostgreSQL behind them. Features taken from data and API design through development, testing and release.',
   },
   {
     number: '02',
     title: 'APIs & Integrations',
-    text: 'Secure REST APIs on Magento Service Contracts with OAuth, bulk data and review APIs, idempotent order-lifecycle integrations with full audit logging, and GA4 data-layer instrumentation across the entire purchase journey.',
+    text: 'REST API design with idempotent processing, audit logging and configurable retry; GraphQL; OAuth 1.0a request signing; asynchronous message-queue jobs; and third-party payment, analytics and notification integrations.',
   },
   {
     number: '03',
-    title: 'The full package',
-    text: 'WordPress security forensics and recovery, React 19 + TypeScript applications, accessibility-first offline PWAs and performance work - end-to-end ownership from investigation and debugging to production release.',
+    title: 'Mobile & Offline-First Apps',
+    text: 'React Native on iOS and Android with typed navigation, Apollo/GraphQL and Redux Toolkit - plus installable PWAs built on service workers, IndexedDB and repository-seam data layers that keep working without a network.',
+  },
+  {
+    number: '04',
+    title: 'Debugging, Performance & Reliability',
+    text: 'Evidence-led root-cause analysis on live systems, query-plan and indexing work, synchronous-to-asynchronous conversions, Playwright and PHPUnit test harnesses, accessibility audits, and security and standards remediation.',
   },
 ];
 
@@ -36,6 +41,7 @@ const certifications = [
   'Data Analytics Essentials - Cisco Networking Academy',
   'Database Foundations - Oracle Academy',
   'Generative AI - Google Cloud & Coursera',
+  'Python Pro Bootcamp - Udemy',
 ];
 
 function Reveal({ children, delay = 0, className }) {
@@ -66,18 +72,20 @@ export default function AboutPage() {
       <section className={styles.hero}>
         <div className={styles.heroTop}>
           <h1>
-            I help e-commerce brands run storefronts that stay fast, stable and
-            secure - and I own problems until they are fixed.
+            I build software that has to survive production - and I own problems
+            until they are actually fixed, not just closed.
           </h1>
           <div className={styles.heroAside}>
             <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8 8.5C8.27614 8.5 8.5 8.27614 8.5 8L8.5 3.5C8.5 3.22386 8.27614 3 8 3C7.72386 3 7.5 3.22386 7.5 3.5V7.5H3.5C3.22386 7.5 3 7.72386 3 8C3 8.27614 3.22386 8.5 3.5 8.5L8 8.5ZM0.646447 1.35355L7.64645 8.35355L8.35355 7.64645L1.35355 0.646447L0.646447 1.35355Z" fill="currentColor"/>
             </svg>
             <p>
-              Commerce Developer at 18th Digitech and a B.Tech in Computer
-              Science. I work across the whole commerce stack - Adobe Commerce
-              (Magento 2), PHP, WordPress, React and MySQL - for brands like
-              Mufti, Forever New, Joyalukkas, TTK Prestige and Asics.
+              Full-stack developer at 18th Digitech with a B.Tech in Computer
+              Science. React, TypeScript, Next.js and React Native on the front;
+              PHP service layers, REST and GraphQL APIs and MySQL behind them.
+              My professional work is mostly large-scale e-commerce for brands
+              like Mufti, Forever New, Joyalukkas and Asics - my own projects
+              are deliberately somewhere else entirely.
             </p>
           </div>
         </div>
@@ -103,6 +111,58 @@ export default function AboutPage() {
               <p className={styles.serviceText}>{service.text}</p>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section className={styles.story}>
+        <Reveal>
+          <h3 className={styles.sectionLabel}>How I got here</h3>
+        </Reveal>
+        <div className={styles.storyBody}>
+          <Reveal delay={0.05}>
+            <p>
+              I came in the ordinary way - a B.Tech in Computer Science, C++ and
+              data structures, then WordPress sites for an NGO while I was still
+              studying. My first full-time role put me on large e-commerce
+              platforms, which turned out to be an unreasonably good place to
+              learn engineering rather than just frameworks. Production does not
+              forgive you: a stale index takes 2,737 products off a storefront, a
+              synchronous export dies behind a CDN at 385,000 rows, a plugin
+              quietly writes malicious code into a live database. I learned to
+              reason from evidence instead of guesses, to design a feature so the
+              next change costs one class and one config line, and to prove a fix
+              before I ship it.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p>
+              The other half of my time goes somewhere else on purpose. Around
+              forty repositories: an offline-first healthcare PWA rebuilt from a
+              dead hackathon codebase into React 19 and TypeScript, with 131 unit
+              tests and an accessibility audit running in CI; two multiplayer
+              browser games with WebRTC peer networking, deterministic simulation
+              and an entity-component-system architecture; a Next.js meal tracker
+              that calls the Claude API for nutrition estimates; a React, Express
+              and PostgreSQL app; a Chrome extension on Manifest V3; a
+              convolutional network in TensorFlow that identifies medicinal
+              leaves. None of it is my day job, which is exactly the point - and
+              the React Native and GraphQL work I do professionally started as
+              curiosity in that column first.
+            </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <p>
+              What I enjoy most is the diagnosis. The bug three people have
+              already looked at. The feature that works on the website and fails
+              silently on the mobile API. The performance number nobody has
+              actually measured. Getting something from &quot;it is broken and we
+              do not know why&quot; to a written explanation with evidence, and
+              then to a fix that is smaller than everyone expected, is the part of
+              this job I would do for free. I am looking to keep doing it on
+              modern stacks - full-stack product work, APIs and mobile - with
+              people who care whether the thing is actually correct.
+            </p>
+          </Reveal>
         </div>
       </section>
 
